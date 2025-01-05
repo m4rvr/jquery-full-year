@@ -1,0 +1,10 @@
+{
+  "name": "jquery-full-year",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "esbuild jquery.full-year.js --bundle --minify --outfile=jquery.full-year.min.js --format=iife"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.2"
+  }
+}
