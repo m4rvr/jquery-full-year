@@ -1,5 +1,7 @@
 (function($) {
-  $.fn.fullYear = function() {
+  $.fn.fullYear = function(options) {
+    const { isEnterprise = false } = options;
+    
     return this.each(function() {
       const $element = $(this);
       
@@ -7,6 +9,10 @@
         url: 'https://getfullyear.com/api/year',
         method: 'GET',
         success: function(response) {
+          if (!isEnterprise) {
+            console.log(response.sponsored_by);
+          }
+
           $element.text(response.year);
         },
         error: function() {
